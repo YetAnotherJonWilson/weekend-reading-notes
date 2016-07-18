@@ -1,0 +1,46 @@
+Intro
+
+  1) When I look at the list of features, I recognize what most of them do (even if I don’t know how to do them all yet).
+  2) So apparently everyone getting started with Angular experiences a lot of confusion and uncertainty; it’s nice to know that if you stick with it, the usefulness makes the learning curve worth it.
+  3)  Some Questions: 1) What is RESTful? 2) How do you use Angular for “testing”? 3) What does it mean to “provide advanced visualizations”?
+  4) Also, what is the Karma library and do I need it? (I guess I’ll find out soon enough . . .)
+
+Chapter 1: The Basics
+
+    1) I entered “dig google.com” in my terminal, and got this back:                 
+    ; <<>> DiG 9.8.3-P1 <<>> google.com
+    ;; global options: +cmd
+    ;; Got answer:
+    ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 6505
+    ;; flags: qr rd ra; QUERY: 1, ANSWER: 6, AUTHORITY: 0, ADDITIONAL: 0
+    ;; QUESTION SECTION:
+    ;google.com. IN A
+
+    ;; ANSWER SECTION:
+    google.com. 205 IN A 74.125.70.138
+    google.com. 205 IN A 74.125.70.100
+    google.com. 205 IN A 74.125.70.113
+    google.com. 205 IN A 74.125.70.101
+    google.com. 205 IN A 74.125.70.139
+    google.com. 205 IN A 74.125.70.102
+
+    ;; Query time: 36 msec
+    ;; SERVER: 192.168.2.1#53(192.168.2.1)
+    ;; WHEN: Sun Jul 17 16:59:08 2016
+    ;; MSG SIZE  rcvd: 124
+  2) Looking at the brief intro to Angular taking from the official site, I think I understand what it all means: Angular is a framework that works on the client-side to provide dynamic single-page apps. That all makes sense to me.
+  3) When it talks about the separation of application logic, data models and views, I think I get the gist of what that’s about, but I think I get the most confused when I’m writing an Atom project, and I have things separated into several different files, and I’m not sure how they connect with each other, or why this separation provides advantages. I suppose this is just part of the learning curve.
+  4) The jQuery example was very helpful (I think) to see what it is that Angular is trying to replace. The way I understand it right now, rather than working with the entire DOM like jQuery, Angular works within a particular part of the page, so you don’t need to walk through each of the same steps you have to in jQuery to manipulate elements on the page.
+
+Chapter 2. Data Binding and Your First AngularJS Web Application
+
+  1) I didn’t realize you could build a simple angular app entirely within the html file by including a script with a link to an api, and then just adding ng-app in the html tag and ng-model in an input tag.
+  2) What are the rules for the Angular expression in the html tag? Does it have to include “ng-app”? I feel like we’ve done this several different ways.
+  3) I’m not sure I understand exactly what “ng-model” is doing behind the scenes, and what it is capable of doing, but in this case it seems simple—it's setting the Angular variable "name” to be the same value as whatever is typed into the input box. I like this example, because it’s very concrete. When it gets more abstract, it’s hard to remember what exactly is going on.
+  4) The following sentence really helped clarify for me what data binding is, and how it relates to the “MV” in “MVC”: "Automatic data binding gives us the ability to consider the view to be a projection of the model state."
+  5) The $ in Angular is completely unrelated to the $ in jQuery—a little confusing at first, but good to know.
+  6) When we talk about $scope in class, I’m confused sometimes. I remember early on we would type “$scope.[something]=[somethingElse], and I assumed that “$scope” was some sort of Angular word that meant we were defining a variable. But in the following sentence, “$scope” is used more abstractly, and I’m not clear what it means exactly: "what we did was bind the “name” property to the input field using the ng-model directive on the containing model object ($scope)."
+      - After I typed the above, I read two sentences further, and $scope is explained a little better. I get that it’s doing something behind the scenes that allows “the controller” to interact with its properties. The part that still confuses me is how ng-model can interact with it without us typing the word “$scope” anywhere.
+  7) The section that explains that $scope doesn’t need to be written in front of the variable in our view seems to be clarifying this a little bit. We use {{ name }}, and the app “knows” that we mean {{ $scope.name }}.
+  8) Another section mentions that it’s best practice to use the property of an object instead of the object itself, as in {{ person.name }} and not {{ person }}.  This helps clarify what it is that we’re working with: these variables are objects and their properties, data types that we’ve become familiar with, that we know how to manipulate and use.
+      - In other words, Angular is complicated, but it’s built on simple data types that we’ve seen before.
